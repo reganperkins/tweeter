@@ -1,20 +1,52 @@
 /* eslint-disable no-undef */
 
-const testUser = {
-  user: {
-    name: 'Newton',
-    avatars: {
-      small: 'https://vanillicon.com/788e533873e80d2002fa14e1412b4188_50.png',
-      regular: 'https://vanillicon.com/788e533873e80d2002fa14e1412b4188.png',
-      large: 'https://vanillicon.com/788e533873e80d2002fa14e1412b4188_200.png',
+const testPostData = [
+  {
+    user: {
+      name: 'Newton',
+      avatars: {
+        small: 'https://vanillicon.com/788e533873e80d2002fa14e1412b4188_50.png',
+        regular: 'https://vanillicon.com/788e533873e80d2002fa14e1412b4188.png',
+        large: 'https://vanillicon.com/788e533873e80d2002fa14e1412b4188_200.png',
+      },
+      handle: '@SirIsaac',
     },
-    handle: '@SirIsaac',
+    content: {
+      text: 'If I have seen further it is by standing on the shoulders of giants',
+    },
+    created_at: 1461116232227,
   },
-  content: {
-    text: 'If I have seen further it is by standing on the shoulders of giants',
+  {
+    user: {
+      name: 'Descartes',
+      avatars: {
+        small: 'https://vanillicon.com/7b89b0d8280b93e2ba68841436c0bebc_50.png',
+        regular: 'https://vanillicon.com/7b89b0d8280b93e2ba68841436c0bebc.png',
+        large: 'https://vanillicon.com/7b89b0d8280b93e2ba68841436c0bebc_200.png',
+      },
+      handle: '@rd',
+    },
+    content: {
+      text: 'Je pense , donc je suis',
+    },
+    created_at: 1461113959088,
   },
-  created_at: 1461116232227,
-};
+  {
+    user: {
+      name: 'Johann von Goethe',
+      avatars: {
+        small: 'https://vanillicon.com/d55cf8e18b47d4baaf60c006a0de39e1_50.png',
+        regular: 'https://vanillicon.com/d55cf8e18b47d4baaf60c006a0de39e1.png',
+        large: 'https://vanillicon.com/d55cf8e18b47d4baaf60c006a0de39e1_200.png',
+      },
+      handle: '@johann49',
+    },
+    content: {
+      text: 'Es ist nichts schrecklicher als eine tätige Unwissenheit.',
+    },
+    created_at: 1461113796368,
+  },
+];
 
 function createDateTagline(timestamp) {
   const createdAt = new Date(timestamp).setHours(0, 0, 0, 0);
@@ -22,6 +54,7 @@ function createDateTagline(timestamp) {
   const millisecondsInDay = 24 * 60 * 60 * 1000;
   const daysPassed = (todaysDate - createdAt) / millisecondsInDay;
   const dayText = daysPassed > 9 ? 'days' : 'day';
+
   return `${daysPassed} ${dayText} ago`;
 }
 
@@ -40,10 +73,13 @@ function createTweetElement(post) {
     [$message, $footer.append($timestamp)],
   );
 
-  $('#posts').html($postHTML);
   return $postHTML;
 }
 
+function renderTweets(posts) {
+  posts.forEach(post => $('#posts').append(createTweetElement(post)));
+}
+
 $(document).ready(() => {
-  createTweetElement(testUser);
+  renderTweets(testPostData);
 });
