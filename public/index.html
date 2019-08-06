@@ -1,31 +1,54 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <!-- Meta Information -->
     <title>Tweeter - Home Page</title>
-
-    <!-- External CSS -->
     <link rel="stylesheet" href="/vendor/normalize-4.1.1.css" type="text/css" />
-
-    <!-- App CSS -->
+    <link href="https://fonts.googleapis.com/css?family=Roboto+Condensed:300,700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/styles/global.css" type="text/css" />
     <link rel="stylesheet" href="/styles/layout.css" type="text/css" />
-
-    <!-- External JS -->
+    <link rel="stylesheet" href="/styles/nav.css" type="text/css" />
+    <link rel="stylesheet" href="/styles/new-tweets.css" type="text/css" />
+    <link rel="stylesheet" href="/styles/post.css" type="text/css" />
     <script type="text/javascript" src="/vendor/jquery-2.2.3.min.js"></script>
-
-    <!-- App JS -->
     <script type="text/javascript" src="/scripts/app.js"></script>
+    <script type="text/javascript" src="/scripts/composer-char-counter.js"></script>
   </head>
 
   <body>
 
-    <!-- Top nav bar (fixed) -->
-    <nav>
-      <span>tweeter</span>
+    <nav id="nav-bar">
+      <img src="/images/puffin.png" class="logo" />
+      <span class="header">Tweeter</span>
     </nav>
 
-    <!-- Page-specific (main) content here -->
     <main class="container">
+      <section class="new-tweet">
+        <h2>Compose Tweet</h2>
+        <hr />
+        <form action="/tweets" method="POST">
+          <textarea id="new-tweet-text" name="text" placeholder="What is on your mind?"></textarea>
+          <input type="submit" value="tweet"/>
+          <span class="counter">140</span>
+        </form>
+      </section>
+      <section id="posts">
+        <!-- <article class="post">
+          <header>
+            <img class="avatar" src="/images/profile-hex.png"/>
+            <h3>Bill Fields</h3>
+            <span class="social">@billfields</span>
+          </header>
+         <div class="post-content">
+           Tweet content goes here
+         </div>
+          <footer>
+            <span>10 days ago</span>
+          </footer>
+        </article> -->
+      </section>
+      <p>this is some text for testingthis is some text for testingthis is some text for testingthis is some text for testingthis is some text for testingthis is some text for testingthis is some text for testing</p>
+      <p>this is some text for testingthis is some text for testingthis is some text for testingthis is some text for testingthis is some text for testingthis is some text for testingthis is some text for testing</p>
+      <p>this is some text for testingthis is some text for testingthis is some text for testingthis is some text for testingthis is some text for testingthis is some text for testingthis is some text for testing</p>
     </main>
 
   </body>
