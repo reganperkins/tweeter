@@ -11,6 +11,7 @@
     <link rel="stylesheet" href="/styles/post.css" type="text/css" />
     <script type="text/javascript" src="/vendor/jquery-2.2.3.min.js"></script>
     <script type="text/javascript" src="/scripts/app.js"></script>
+    <script type="text/javascript" src="/scripts/new-tweet.js"></script>
     <script type="text/javascript" src="/scripts/composer-char-counter.js"></script>
   </head>
 
@@ -25,7 +26,7 @@
       <section class="new-tweet">
         <h2>Compose Tweet</h2>
         <hr />
-        <form action="/tweets" method="POST">
+        <form id="tweet-form" action="/tweets" method="POST">
           <textarea id="new-tweet-text" name="text" placeholder="What is on your mind?"></textarea>
           <input type="submit" value="tweet"/>
           <span class="counter">140</span>
@@ -33,9 +34,6 @@
       </section>
       <section id="posts">
       </section>
-      <p>this is some text for testingthis is some text for testingthis is some text for testingthis is some text for testingthis is some text for testingthis is some text for testingthis is some text for testing</p>
-      <p>this is some text for testingthis is some text for testingthis is some text for testingthis is some text for testingthis is some text for testingthis is some text for testingthis is some text for testing</p>
-      <p>this is some text for testingthis is some text for testingthis is some text for testingthis is some text for testingthis is some text for testingthis is some text for testingthis is some text for testing</p>
     </main>
 
   </body>
