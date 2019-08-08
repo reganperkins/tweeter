@@ -39,6 +39,34 @@ function loadTweets() {
     });
 }
 
+function getTweetFormError() {
+  const text = $('#new-tweet-text').val();
+  let error = false;
+
+  if (text < 1) error = 'you must provide a tweet';
+  if (text.length > 141) error = 'tweet is too long';
+
+  return error;
+}
+
+function createTweet(e) {
+  e.preventDefault();
+  const error = getTweetFormError();
+  if (error) {
+    console.warn(error);
+    return;
+  }
+  $.ajax('/tweets', {
+    method: 'POST',
+    data: $(this).serialize(),
+  })
+    .done((tweet) => {
+      $('#tweet-form')[0].reset();
+      $('#posts').prepend(createTweetElement(tweet));
+    });
+}
+
 $(document).ready(() => {
   loadTweets();
+  $('#tweet-form').submit(createTweet);
 });
