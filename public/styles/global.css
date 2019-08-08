@@ -1,3 +1,15 @@
 .danger-text {
-  color: red;
+  color: #E7442E;
+}
+.error-message {
+  display: none;
+  background-color: #FBF4F1;
+  border: 1px solid #F6DAD0;
+  border-left: 7px solid #E7442E;
+  color: #E7442E;
+  padding: 0 20px;
+  border-radius: 5px;
+  font-size: 0.8em;
+  line-height: 2em;
+  margin: 10px 0;
 }

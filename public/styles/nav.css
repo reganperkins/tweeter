@@ -25,9 +25,10 @@
   line-height: 3em;
   color: #00a087;
   background-color: #E8FDFE;
-  border: 1px solid #000;
+  border: 1px solid #D0D0D0;
 }
 #toggle-btn:hover {
   background: #fff;
   outline: none;
+  border: 1px solid #000;
 }
