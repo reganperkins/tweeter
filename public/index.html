@@ -12,6 +12,7 @@
     <script type="text/javascript" src="/vendor/jquery-2.2.3.min.js"></script>
     <script type="text/javascript" src="/scripts/app.js"></script>
     <script type="text/javascript" src="/scripts/composer-char-counter.js"></script>
+    <script type="text/javascript" src="/scripts/toggle-tweet-form.js"></script>
   </head>
 
   <body>
@@ -19,10 +20,11 @@
     <nav id="nav-bar">
       <img src="/images/puffin.png" class="logo" />
       <span class="header">Tweeter</span>
+      <button id="toggle-btn">Compose</button>
     </nav>
 
     <main class="container">
-      <section class="new-tweet">
+      <section id="new-tweet">
         <h2>Compose Tweet</h2>
         <hr />
         <form id="tweet-form" action="/tweets" method="POST">
