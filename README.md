@@ -12,3 +12,6 @@ Tweeter is a simple, single-page Twitter clone to practice jQuery and AJAX front
 
 - Express
 - Node 5.10.x or above
+
+## For Development
+`sass --watch sass/main.scss public/styles/styles.css`

@@ -1,0 +1,15 @@
+.danger-text {
+  color: $red;
+}
+.error-message {
+  display: none;
+  background-color: $error-background;
+  border: 1px solid $error-border;
+  border-left: 7px solid $red;
+  color: $red;
+  padding: 0 20px;
+  border-radius: $border-radius-sm;
+  font-size: 0.8em;
+  line-height: 2em;
+  margin: 10px 0;
+}
